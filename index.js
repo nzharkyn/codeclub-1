@@ -1,9 +1,11 @@
 export default {
-	fetch() {
-		return new Response('Hello worker!', {
-			headers: {
-				'content-type': 'text/plain',
-			},
-		});
-	},
+   fetch(request) {
+       console.log(request.url);
+       return new Response('Hello worker!, the url is ' + request.url, {
+           headers: {
+               'content-type': 'text/plain',
+           },
+       });
+   },
 };
+
